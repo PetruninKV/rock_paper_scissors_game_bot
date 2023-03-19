@@ -23,7 +23,7 @@ async def main():
     bot: Bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
     dp: Dispatcher = Dispatcher()
 
-    # dp.include_router(user_handlers.router)  
+    dp.include_router(user_handlers.router)  
     dp.include_router(other_handlers.router)    
 
     await bot.delete_webhook(drop_pending_updates=True)
